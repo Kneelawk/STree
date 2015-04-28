@@ -35,7 +35,8 @@ import javax.swing.tree.TreeNode;
 
 import com.kneelawk.stree.core.infoProviders.MapSTreeNodeInfoProvider;
 
-public class MapSTreeNode extends STreeNode implements Map<String, STreeNode> {
+public class MapSTreeNode extends STreeNode implements Map<String, STreeNode>,
+		STreeAccess<String> {
 	/**
 	 * 
 	 */
@@ -309,5 +310,15 @@ public class MapSTreeNode extends STreeNode implements Map<String, STreeNode> {
 
 	public StringSTreeNode getString(String key) {
 		return (StringSTreeNode) get(key);
+	}
+
+	@Override
+	public STreeNode getNode(String key) {
+		return get(key);
+	}
+
+	@Override
+	public void putNode(String key, STreeNode node) {
+		put(key, node);
 	}
 }

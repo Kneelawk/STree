@@ -38,7 +38,8 @@ import com.kneelawk.stree.core.infoProviders.ListSTreeNodeInfoProvider;
 import com.kneelawk.stree.core.infoProviders.STreeInfoProvider;
 
 public class ListSTreeNode extends STreeNode implements Iterable<STreeNode>,
-		Collection<STreeNode>, List<STreeNode>, RandomAccess {
+		Collection<STreeNode>, List<STreeNode>, RandomAccess,
+		STreeAccess<Integer> {
 	/**
 	 * 
 	 */
@@ -377,5 +378,19 @@ public class ListSTreeNode extends STreeNode implements Iterable<STreeNode>,
 
 	public StringSTreeNode getString(int index) {
 		return (StringSTreeNode) get(index);
+	}
+
+	@Override
+	public STreeNode getNode(Integer key) {
+		return get(key.intValue());
+	}
+
+	@Override
+	public void putNode(Integer key, STreeNode node) {
+		int ival = key.intValue();
+		if (ival < nodes.size())
+			set(ival, node);
+		else
+			add(ival, node);
 	}
 }
