@@ -313,12 +313,17 @@ public class MapSTreeNode extends STreeNode implements Map<String, STreeNode>,
 	}
 
 	@Override
+	public boolean containsNode(String key) {
+		return nodes.containsKey(key);
+	}
+
+	@Override
 	public STreeNode getNode(String key) {
-		return get(key);
+		return nodes.get(key);
 	}
 
 	@Override
 	public void putNode(String key, STreeNode node) {
-		put(key, node);
+		nodes.put(key, node);
 	}
 }

@@ -379,18 +379,24 @@ public class ListSTreeNode extends STreeNode implements Iterable<STreeNode>,
 	public StringSTreeNode getString(int index) {
 		return (StringSTreeNode) get(index);
 	}
+	
+	@Override
+	public boolean containsNode(Integer key) {
+		int ival = key.intValue();
+		return ival >= 0 && ival < nodes.size();
+	}
 
 	@Override
 	public STreeNode getNode(Integer key) {
-		return get(key.intValue());
+		return nodes.get(key.intValue());
 	}
 
 	@Override
 	public void putNode(Integer key, STreeNode node) {
 		int ival = key.intValue();
 		if (ival < nodes.size())
-			set(ival, node);
+			nodes.set(ival, node);
 		else
-			add(ival, node);
+			nodes.add(ival, node);
 	}
 }
