@@ -332,6 +332,7 @@ public class ListSTreeNode extends STreeNode implements Iterable<STreeNode>,
 		return (ByteSTreeNode) get(index);
 	}
 
+	@Deprecated
 	public CalendarSTreeNode getCalendar(int index) {
 		return (CalendarSTreeNode) get(index);
 	}
@@ -344,7 +345,7 @@ public class ListSTreeNode extends STreeNode implements Iterable<STreeNode>,
 		return (DoubleSTreeNode) get(index);
 	}
 
-	@SuppressWarnings("deprecation")
+	@Deprecated
 	public FileSTreeNode getFile(int index) {
 		return (FileSTreeNode) get(index);
 	}
@@ -371,6 +372,10 @@ public class ListSTreeNode extends STreeNode implements Iterable<STreeNode>,
 
 	public MapSTreeNode getMap(int index) {
 		return (MapSTreeNode) get(index);
+	}
+
+	public NewCalendarSTreeNode getNewCalendar(int index) {
+		return (NewCalendarSTreeNode) get(index);
 	}
 
 	public ShortSTreeNode getShort(int index) {

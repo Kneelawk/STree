@@ -49,6 +49,7 @@ import com.kneelawk.stree.core.infoProviders.IntSTreeNodeInfoProvider;
 import com.kneelawk.stree.core.infoProviders.ListSTreeNodeInfoProvider;
 import com.kneelawk.stree.core.infoProviders.LongSTreeNodeInfoProvider;
 import com.kneelawk.stree.core.infoProviders.MapSTreeNodeInfoProvider;
+import com.kneelawk.stree.core.infoProviders.NewCalendarSTreeNodeInfoProvider;
 import com.kneelawk.stree.core.infoProviders.STreeInfoProvider;
 import com.kneelawk.stree.core.infoProviders.ShortSTreeNodeInfoProvider;
 import com.kneelawk.stree.core.infoProviders.StringSTreeNodeInfoProvider;
@@ -61,6 +62,7 @@ import com.kneelawk.stree.core.infoProviders.StringSTreeNodeInfoProvider;
  * @author Kneelawk
  * 
  */
+@SuppressWarnings("deprecation")
 public abstract class STreeNode implements TreeNode, Serializable {
 	/**
 	 * 
@@ -102,6 +104,7 @@ public abstract class STreeNode implements TreeNode, Serializable {
 		addSTreeInfoProvider(infos, new FileSTreeNodeInfoProvider());
 		addSTreeInfoProvider(infos, new BooleanArraySTreeNodeInfoProvider());
 		addSTreeInfoProvider(infos, new CalendarSTreeNodeInfoProvider());
+		addSTreeInfoProvider(infos, new NewCalendarSTreeNodeInfoProvider());
 		return infos;
 	}
 

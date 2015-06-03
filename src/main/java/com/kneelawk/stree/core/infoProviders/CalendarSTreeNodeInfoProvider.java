@@ -32,6 +32,14 @@ import java.util.Calendar;
 import com.kneelawk.stree.core.CalendarSTreeNode;
 import com.kneelawk.stree.core.STreeNode;
 
+/**
+ * @deprecated Has inconsistencies between written and read calendars. Use
+ *             NewCalendarSTreeNodeInfoProvider instead.
+ * @author Kneelawk
+ *
+ */
+
+@Deprecated
 public class CalendarSTreeNodeInfoProvider implements STreeInfoProvider {
 
 	@Override
@@ -48,7 +56,8 @@ public class CalendarSTreeNodeInfoProvider implements STreeInfoProvider {
 	}
 
 	@Override
-	public CalendarSTreeNode read(DataInput streamToReadFrom) throws IOException {
+	public CalendarSTreeNode read(DataInput streamToReadFrom)
+			throws IOException {
 		Calendar cal = Calendar.getInstance();
 		cal.set(Calendar.MILLISECOND, streamToReadFrom.readInt());
 		cal.set(Calendar.SECOND, streamToReadFrom.readInt());

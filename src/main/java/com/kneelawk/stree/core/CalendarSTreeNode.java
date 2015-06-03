@@ -29,22 +29,30 @@ import java.util.Calendar;
 import com.kneelawk.stree.core.infoProviders.CalendarSTreeNodeInfoProvider;
 import com.kneelawk.stree.core.infoProviders.STreeInfoProvider;
 
+/**
+ * @deprecated Has inconsistencies between written and read calendars. Use
+ *             NewCalendarSTreeNode instead.
+ * @author Kneelawk
+ *
+ */
+
+@Deprecated
 public class CalendarSTreeNode extends STreeNode {
-	
+
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 8051856989852427073L;
 	public Calendar data;
-	
-	public CalendarSTreeNode(){
+
+	public CalendarSTreeNode() {
 		data = Calendar.getInstance();
 	}
-	
-	public CalendarSTreeNode(Calendar c){
+
+	public CalendarSTreeNode(Calendar c) {
 		data = c;
 	}
-	
+
 	@Override
 	public Calendar getValue() {
 		return data;
@@ -62,15 +70,17 @@ public class CalendarSTreeNode extends STreeNode {
 
 	@Override
 	public String toString(int indent) {
-		String s = "<CalendarSTreeNode>:{\n" +
-				indent(indent + 1) + "millisecond:" + data.get(Calendar.MILLISECOND) + "\n" +
-				indent(indent + 1) + "second:" + data.get(Calendar.SECOND) + "\n" +
-				indent(indent + 1) + "minute:" + data.get(Calendar.MINUTE) + "\n" +
-				indent(indent + 1) + "hour_of_day:" + data.get(Calendar.HOUR_OF_DAY) + "\n" +
-				indent(indent + 1) + "day_of_year:" + data.get(Calendar.DAY_OF_YEAR) + "\n" +
-				indent(indent + 1) + "year:" + data.get(Calendar.YEAR) + "\n" +
-				indent(indent + 1) + "dst_offset:" + data.get(Calendar.DST_OFFSET) + "\n" +
-				indent(indent) + "}";
+		String s = "<CalendarSTreeNode>:{\n" + indent(indent + 1)
+				+ "millisecond:" + data.get(Calendar.MILLISECOND) + "\n"
+				+ indent(indent + 1) + "second:" + data.get(Calendar.SECOND)
+				+ "\n" + indent(indent + 1) + "minute:"
+				+ data.get(Calendar.MINUTE) + "\n" + indent(indent + 1)
+				+ "hour_of_day:" + data.get(Calendar.HOUR_OF_DAY) + "\n"
+				+ indent(indent + 1) + "day_of_year:"
+				+ data.get(Calendar.DAY_OF_YEAR) + "\n" + indent(indent + 1)
+				+ "year:" + data.get(Calendar.YEAR) + "\n" + indent(indent + 1)
+				+ "dst_offset:" + data.get(Calendar.DST_OFFSET) + "\n"
+				+ indent(indent) + "}";
 		return s;
 	}
 
