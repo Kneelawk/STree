@@ -54,12 +54,11 @@ import com.kneelawk.stree.core.infoProviders.ShortSTreeNodeInfoProvider;
 import com.kneelawk.stree.core.infoProviders.StringSTreeNodeInfoProvider;
 
 /**
- * The abstract superclass of all the STreeNodes
+ * The abstract superclass of all the STreeNodes.
  * 
- * This is a TREE not a GRAPH and will be written like a tree. If you make
- * infinite loops you will run out of java memory trying to save them.
+ * This is a <b>tree not a graph</b> and will be written like a tree.
  * 
- * @author Jed Pommert
+ * @author Kneelawk
  * 
  */
 public abstract class STreeNode implements TreeNode, Serializable {
@@ -68,7 +67,7 @@ public abstract class STreeNode implements TreeNode, Serializable {
 	 */
 	private static final long serialVersionUID = -7469494752001261273L;
 
-	public static HashMap<Byte, STreeInfoProvider> infoProviders = ctreatePorviderList();
+	public static HashMap<Byte, STreeInfoProvider> infoProviders = createPorviderList();
 
 	protected STreeNode parent = null;
 	protected boolean ivis = true;
@@ -84,7 +83,7 @@ public abstract class STreeNode implements TreeNode, Serializable {
 		ivis = includesValuesInString;
 	}
 
-	private static HashMap<Byte, STreeInfoProvider> ctreatePorviderList() {
+	private static HashMap<Byte, STreeInfoProvider> createPorviderList() {
 		HashMap<Byte, STreeInfoProvider> infos = new HashMap<Byte, STreeInfoProvider>();
 		addSTreeInfoProvider(infos, new EndSTreeNodeInfoProvider());
 		addSTreeInfoProvider(infos, new MapSTreeNodeInfoProvider());
@@ -123,12 +122,12 @@ public abstract class STreeNode implements TreeNode, Serializable {
 
 	/**
 	 * gets the STreeNode's
-	 * {@link com.pommert.jedidiah.stree.infoProviders.STreeInfoProvider
-	 * STreeNodeInfoProvider}
+	 * {@link com.kneelawk.stree.core.infoProviders.STreeInfoProvider
+	 * STreeInfoProvider}
 	 * 
 	 * @return the STreeNode's
-	 *         {@link com.pommert.jedidiah.stree.infoProviders.STreeInfoProvider
-	 *         STreeNodeInfoProvider}
+	 *         {@link com.kneelawk.stree.core.infoProviders.STreeInfoProvider
+	 *         STreeInfoProvider}
 	 */
 	public abstract STreeInfoProvider getInfoProvider();
 
@@ -190,13 +189,13 @@ public abstract class STreeNode implements TreeNode, Serializable {
 
 	/**
 	 * registers an
-	 * {@link com.pommert.jedidiah.stree.infoProviders.STreeInfoProvider
-	 * STreeNodeInfoProvider} for reading
+	 * {@link com.kneelawk.stree.core.infoProviders.STreeInfoProvider
+	 * STreeInfoProvider} for reading
 	 * 
 	 * @param info
 	 *            the
-	 *            {@link com.pommert.jedidiah.stree.infoProviders.STreeInfoProvider
-	 *            STreeNodeInfoProvider} to register
+	 *            {@link com.kneelawk.stree.core.infoProviders.STreeInfoProvider
+	 *            STreeInfoProvider} to register
 	 */
 	public static void regiserInfoProvider(STreeInfoProvider info) {
 		if (infoProviders.containsKey(info.getSTreeID()))
@@ -242,18 +241,16 @@ public abstract class STreeNode implements TreeNode, Serializable {
 	}
 
 	/**
-	 * gets an
-	 * {@link com.pommert.jedidiah.stree.infoProviders.STreeInfoProvider
-	 * STreeNodeInfoProvider} from STreeNode's private list of
-	 * STreeNodeInfoProviders
+	 * gets an {@link com.kneelawk.stree.core.infoProviders.STreeInfoProvider
+	 * STreeInfoProvider} from STreeNode's private list of STreeInfoProviders
 	 * 
 	 * @param id
 	 *            the ID of the
-	 *            {@link com.pommert.jedidiah.stree.infoProviders.STreeInfoProvider
-	 *            STreeNodeInfoProvider} (same as ID of the linked STreeNode)
+	 *            {@link com.kneelawk.stree.core.infoProviders.STreeInfoProvider
+	 *            STreeInfoProvider} (same as ID of the linked STreeNode)
 	 * @return the
-	 *         {@link com.pommert.jedidiah.stree.infoProviders.STreeInfoProvider
-	 *         STreeNodeInfoProvider} that has the specified ID
+	 *         {@link com.kneelawk.stree.core.infoProviders.STreeInfoProvider
+	 *         STreeInfoProvider} that has the specified ID
 	 */
 	public static STreeInfoProvider getInfoProviderForID(byte id) {
 		return infoProviders.get(id);

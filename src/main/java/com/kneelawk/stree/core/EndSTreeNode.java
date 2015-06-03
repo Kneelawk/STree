@@ -28,7 +28,7 @@ import com.kneelawk.stree.core.infoProviders.EndSTreeNodeInfoProvider;
 import com.kneelawk.stree.core.infoProviders.STreeInfoProvider;
 /**
  * EndSTreeNode - usualy put at the end of a {@link MapSTreeNode MapSTreeNode}'s inner nodes
- * @author Jed Pommert
+ * @author Kneelawk
  *
  */
 public class EndSTreeNode extends STreeNode {

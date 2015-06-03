@@ -344,6 +344,7 @@ public class ListSTreeNode extends STreeNode implements Iterable<STreeNode>,
 		return (DoubleSTreeNode) get(index);
 	}
 
+	@SuppressWarnings("deprecation")
 	public FileSTreeNode getFile(int index) {
 		return (FileSTreeNode) get(index);
 	}
@@ -379,7 +380,7 @@ public class ListSTreeNode extends STreeNode implements Iterable<STreeNode>,
 	public StringSTreeNode getString(int index) {
 		return (StringSTreeNode) get(index);
 	}
-	
+
 	@Override
 	public boolean containsNode(Integer key) {
 		int ival = key.intValue();

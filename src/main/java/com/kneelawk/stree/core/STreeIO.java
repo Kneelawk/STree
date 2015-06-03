@@ -47,7 +47,7 @@ import java.io.OutputStream;
  * 					new File("data.st"));
  * </code>
  * 
- * @author Jed Pommert
+ * @author Kneelawk
  * @see STreeNode
  */
 public class STreeIO {

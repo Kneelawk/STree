@@ -276,6 +276,7 @@ public class MapSTreeNode extends STreeNode implements Map<String, STreeNode>,
 		return (DoubleSTreeNode) get(key);
 	}
 
+	@SuppressWarnings("deprecation")
 	public FileSTreeNode getFile(String key) {
 		return (FileSTreeNode) get(key);
 	}

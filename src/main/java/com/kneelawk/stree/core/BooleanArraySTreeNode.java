@@ -27,6 +27,14 @@ package com.kneelawk.stree.core;
 import com.kneelawk.stree.core.infoProviders.BooleanArraySTreeNodeInfoProvider;
 import com.kneelawk.stree.core.infoProviders.STreeInfoProvider;
 
+/**
+ * Under normal DataOutput implementations, this is the same as using a
+ * ByteArraySTreeNode full of 1s and 0s.
+ * 
+ * @author Kneelawk
+ *
+ */
+
 public class BooleanArraySTreeNode extends STreeNode {
 	/**
 	 * 

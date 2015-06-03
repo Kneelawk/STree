@@ -32,6 +32,7 @@ import java.io.IOException;
 import com.kneelawk.stree.core.FileSTreeNode;
 import com.kneelawk.stree.core.STreeNode;
 
+@SuppressWarnings("deprecation")
 public class FileSTreeNodeInfoProvider implements STreeInfoProvider {
 
 	@Override

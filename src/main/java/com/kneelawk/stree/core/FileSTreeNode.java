@@ -29,6 +29,14 @@ import java.io.File;
 import com.kneelawk.stree.core.infoProviders.FileSTreeNodeInfoProvider;
 import com.kneelawk.stree.core.infoProviders.STreeInfoProvider;
 
+/**
+ * This node does not store file data, only the file name and location.
+ * 
+ * @deprecated Use StringSTreeNode instead.
+ * @author Kneelawk
+ *
+ */
+@Deprecated
 public class FileSTreeNode extends STreeNode {
 	/**
 	 * 
@@ -38,22 +46,22 @@ public class FileSTreeNode extends STreeNode {
 	 * the FileSTreeNode's data
 	 */
 	public File data = null;
-	
+
 	/**
 	 * initializes data
 	 */
 	public FileSTreeNode() {
 		data = new File("");
 	}
-	
+
 	public FileSTreeNode(String filename) {
 		data = new File(filename);
 	}
-	
+
 	public FileSTreeNode(File f) {
 		data = f;
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */

@@ -27,6 +27,12 @@ package com.kneelawk.stree.core;
 import com.kneelawk.stree.core.infoProviders.BooleanSTreeNodeInfoProvider;
 import com.kneelawk.stree.core.infoProviders.STreeInfoProvider;
 
+/**
+ * 
+ * @author Kneelawk
+ *
+ */
+
 public class BooleanSTreeNode extends STreeNode {
 	/**
 	 * 

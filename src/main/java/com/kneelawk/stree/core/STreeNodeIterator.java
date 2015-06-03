@@ -27,6 +27,15 @@ package com.kneelawk.stree.core;
 import java.util.Enumeration;
 import java.util.Iterator;
 
+/**
+ * This class is an internal utility class that is exposed for use in custom
+ * STreeNodes.
+ * 
+ * @author Kneelawk
+ *
+ * @param <T>
+ */
+
 class STreeNodeIterator<T> implements Iterator<T> {
 	Enumeration<T> en;
 
