@@ -36,18 +36,18 @@ public class ByteSTreeNode extends STreeNode {
 	 * the ByteSTreeNode's data
 	 */
 	public byte data = 0;
-	
+
 	/**
 	 * nothing happens here
 	 */
-	public ByteSTreeNode(){
-		
+	public ByteSTreeNode() {
+
 	}
-	
+
 	public ByteSTreeNode(byte b) {
 		data = b;
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */

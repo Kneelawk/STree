@@ -36,18 +36,19 @@ public class StringSTreeNode extends STreeNode implements CharSequence {
 	 * the StringSTreeNode's data
 	 */
 	public String data = "";
-	
+
 	/**
 	 * nothing happens here
 	 */
 	public StringSTreeNode() {
-		
+
 	}
-	
+
 	public StringSTreeNode(String s) {
-		if(s != null) data = s;
+		if (s != null)
+			data = s;
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */
