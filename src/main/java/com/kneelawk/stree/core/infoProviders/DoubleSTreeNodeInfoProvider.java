@@ -31,8 +31,12 @@ import java.io.IOException;
 import com.kneelawk.stree.core.DoubleSTreeNode;
 import com.kneelawk.stree.core.STreeNode;
 
-public class DoubleSTreeNodeInfoProvider implements
-		STreeInfoProvider {
+public class DoubleSTreeNodeInfoProvider implements STreeInfoProvider {
+
+	public static final DoubleSTreeNodeInfoProvider INSTANCE = new DoubleSTreeNodeInfoProvider();
+
+	protected DoubleSTreeNodeInfoProvider() {
+	}
 
 	@Override
 	public void write(STreeNode objectToWrite, DataOutput streamToWriteTo)
@@ -42,8 +46,7 @@ public class DoubleSTreeNodeInfoProvider implements
 	}
 
 	@Override
-	public DoubleSTreeNode read(DataInput streamToReadFrom)
-			throws IOException {
+	public DoubleSTreeNode read(DataInput streamToReadFrom) throws IOException {
 		return new DoubleSTreeNode(streamToReadFrom.readDouble());
 	}
 

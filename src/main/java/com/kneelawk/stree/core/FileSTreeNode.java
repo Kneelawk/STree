@@ -83,7 +83,7 @@ public class FileSTreeNode extends STreeNode {
 	 */
 	@Override
 	public STreeInfoProvider getInfoProvider() {
-		return new FileSTreeNodeInfoProvider();
+		return FileSTreeNodeInfoProvider.INSTANCE;
 	}
 
 	/**

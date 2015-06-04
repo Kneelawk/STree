@@ -35,6 +35,11 @@ import com.kneelawk.stree.core.STreeNode;
 @SuppressWarnings("deprecation")
 public class FileSTreeNodeInfoProvider implements STreeInfoProvider {
 
+	public static final FileSTreeNodeInfoProvider INSTANCE = new FileSTreeNodeInfoProvider();
+
+	protected FileSTreeNodeInfoProvider() {
+	}
+
 	@Override
 	public void write(STreeNode objectToWrite, DataOutput streamToWriteTo)
 			throws IOException {

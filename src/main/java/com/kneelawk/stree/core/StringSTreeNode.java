@@ -69,7 +69,7 @@ public class StringSTreeNode extends STreeNode implements CharSequence {
 	 */
 	@Override
 	public STreeInfoProvider getInfoProvider() {
-		return new StringSTreeNodeInfoProvider();
+		return StringSTreeNodeInfoProvider.INSTANCE;
 	}
 
 	/**

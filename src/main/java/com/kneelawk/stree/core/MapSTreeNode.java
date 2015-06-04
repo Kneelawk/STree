@@ -85,7 +85,7 @@ public class MapSTreeNode extends STreeNode implements Map<String, STreeNode>,
 	 */
 	@Override
 	public MapSTreeNodeInfoProvider getInfoProvider() {
-		return new MapSTreeNodeInfoProvider();
+		return MapSTreeNodeInfoProvider.INSTANCE;
 	}
 
 	/**

@@ -36,18 +36,18 @@ public class DoubleSTreeNode extends STreeNode {
 	 * the DoubleSTreeNode's data
 	 */
 	public double data = 0;
-	
+
 	/**
 	 * nothing happens
 	 */
 	public DoubleSTreeNode() {
-		
+
 	}
-	
+
 	public DoubleSTreeNode(double d) {
 		data = d;
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */
@@ -69,7 +69,7 @@ public class DoubleSTreeNode extends STreeNode {
 	 */
 	@Override
 	public STreeInfoProvider getInfoProvider() {
-		return new DoubleSTreeNodeInfoProvider();
+		return DoubleSTreeNodeInfoProvider.INSTANCE;
 	}
 
 	/**

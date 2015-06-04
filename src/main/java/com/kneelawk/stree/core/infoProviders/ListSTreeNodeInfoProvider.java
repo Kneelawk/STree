@@ -33,11 +33,17 @@ import com.kneelawk.stree.core.STreeNode;
 
 public class ListSTreeNodeInfoProvider implements STreeInfoProvider {
 
+	public static final ListSTreeNodeInfoProvider INSTANCE = new ListSTreeNodeInfoProvider();
+
+	protected ListSTreeNodeInfoProvider() {
+	}
+
 	@Override
-	public void write(STreeNode objectToWrite, DataOutput streamToWriteTo) throws IOException {
+	public void write(STreeNode objectToWrite, DataOutput streamToWriteTo)
+			throws IOException {
 		ListSTreeNode node = (ListSTreeNode) objectToWrite;
 		streamToWriteTo.writeInt(node.size());
-		for(int i = 0; i < node.size(); i++){
+		for (int i = 0; i < node.size(); i++) {
 			STreeNode.writeSTreeNode(node.get(i), streamToWriteTo);
 		}
 	}
@@ -46,7 +52,7 @@ public class ListSTreeNodeInfoProvider implements STreeInfoProvider {
 	public ListSTreeNode read(DataInput streamToReadFrom) throws IOException {
 		ListSTreeNode node = new ListSTreeNode();
 		int size = streamToReadFrom.readInt();
-		for(int i = 0; i < size; i++){
+		for (int i = 0; i < size; i++) {
 			node.add(STreeNode.readSTreeNode(streamToReadFrom));
 		}
 		return node;

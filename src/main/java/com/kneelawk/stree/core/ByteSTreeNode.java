@@ -69,7 +69,7 @@ public class ByteSTreeNode extends STreeNode {
 	 */
 	@Override
 	public STreeInfoProvider getInfoProvider() {
-		return new ByteSTreeNodeInfoProvider();
+		return ByteSTreeNodeInfoProvider.INSTANCE;
 	}
 
 	/**

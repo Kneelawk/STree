@@ -36,18 +36,18 @@ public class FloatSTreeNode extends STreeNode {
 	 * the FloatSTreeNode's data
 	 */
 	public float data = 0f;
-	
+
 	/**
 	 * nothing happens here
 	 */
-	public FloatSTreeNode(){
-		
+	public FloatSTreeNode() {
+
 	}
-	
-	public FloatSTreeNode(float f){
+
+	public FloatSTreeNode(float f) {
 		data = f;
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */
@@ -69,7 +69,7 @@ public class FloatSTreeNode extends STreeNode {
 	 */
 	@Override
 	public STreeInfoProvider getInfoProvider() {
-		return new FloatSTreeNodeInfoProvider();
+		return FloatSTreeNodeInfoProvider.INSTANCE;
 	}
 
 	/**

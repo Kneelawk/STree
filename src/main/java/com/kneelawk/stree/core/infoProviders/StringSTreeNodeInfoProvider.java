@@ -33,6 +33,11 @@ import com.kneelawk.stree.core.StringSTreeNode;
 
 public class StringSTreeNodeInfoProvider implements STreeInfoProvider {
 
+	public static final StringSTreeNodeInfoProvider INSTANCE = new StringSTreeNodeInfoProvider();
+
+	protected StringSTreeNodeInfoProvider() {
+	}
+
 	@Override
 	public void write(STreeNode objectToWrite, DataOutput streamToWriteTo)
 			throws IOException {

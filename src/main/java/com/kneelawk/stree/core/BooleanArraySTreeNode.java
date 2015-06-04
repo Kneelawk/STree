@@ -77,7 +77,7 @@ public class BooleanArraySTreeNode extends STreeNode {
 	 */
 	@Override
 	public STreeInfoProvider getInfoProvider() {
-		return new BooleanArraySTreeNodeInfoProvider();
+		return BooleanArraySTreeNodeInfoProvider.INSTANCE;
 	}
 
 	/**

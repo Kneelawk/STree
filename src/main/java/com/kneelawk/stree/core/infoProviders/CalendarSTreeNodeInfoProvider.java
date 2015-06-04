@@ -42,6 +42,11 @@ import com.kneelawk.stree.core.STreeNode;
 @Deprecated
 public class CalendarSTreeNodeInfoProvider implements STreeInfoProvider {
 
+	public static final CalendarSTreeNodeInfoProvider INSTANCE = new CalendarSTreeNodeInfoProvider();
+
+	protected CalendarSTreeNodeInfoProvider() {
+	}
+
 	@Override
 	public void write(STreeNode objectToWrite, DataOutput streamToWriteTo)
 			throws IOException {

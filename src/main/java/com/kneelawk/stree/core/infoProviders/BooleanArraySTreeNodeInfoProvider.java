@@ -33,22 +33,28 @@ import com.kneelawk.stree.core.STreeNode;
 
 public class BooleanArraySTreeNodeInfoProvider implements STreeInfoProvider {
 
+	public static final BooleanArraySTreeNodeInfoProvider INSTANCE = new BooleanArraySTreeNodeInfoProvider();
+
+	protected BooleanArraySTreeNodeInfoProvider() {
+	}
+
 	@Override
 	public void write(STreeNode objectToWrite, DataOutput streamToWriteTo)
 			throws IOException {
 		BooleanArraySTreeNode node = (BooleanArraySTreeNode) objectToWrite;
 		boolean[] data = node.getValue();
 		streamToWriteTo.writeInt(data.length);
-		for(int i = 0; i < data.length; i++){
+		for (int i = 0; i < data.length; i++) {
 			streamToWriteTo.writeBoolean(data[i]);
 		}
 	}
 
 	@Override
-	public BooleanArraySTreeNode read(DataInput streamToReadFrom) throws IOException {
+	public BooleanArraySTreeNode read(DataInput streamToReadFrom)
+			throws IOException {
 		int length = streamToReadFrom.readInt();
 		boolean[] data = new boolean[length];
-		for(int i = 0; i < length; i++){
+		for (int i = 0; i < length; i++) {
 			data[i] = streamToReadFrom.readBoolean();
 		}
 		return new BooleanArraySTreeNode(data);

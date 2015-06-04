@@ -36,18 +36,18 @@ public class ShortSTreeNode extends STreeNode {
 	 * the ShortSTreeNode's data
 	 */
 	public short data = 0;
-	
+
 	/**
 	 * nothing happens here
 	 */
 	public ShortSTreeNode() {
-		
+
 	}
-	
+
 	public ShortSTreeNode(short s) {
 		data = s;
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */
@@ -69,7 +69,7 @@ public class ShortSTreeNode extends STreeNode {
 	 */
 	@Override
 	public STreeInfoProvider getInfoProvider() {
-		return new ShortSTreeNodeInfoProvider();
+		return ShortSTreeNodeInfoProvider.INSTANCE;
 	}
 
 	/**

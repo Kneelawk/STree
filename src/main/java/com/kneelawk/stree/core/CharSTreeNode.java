@@ -36,18 +36,18 @@ public class CharSTreeNode extends STreeNode {
 	 * the CharSTreeNode's data
 	 */
 	public char data = 0;
-	
+
 	/**
 	 * nothing happens here
 	 */
 	public CharSTreeNode() {
-		
+
 	}
-	
+
 	public CharSTreeNode(char c) {
 		data = c;
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */
@@ -69,7 +69,7 @@ public class CharSTreeNode extends STreeNode {
 	 */
 	@Override
 	public STreeInfoProvider getInfoProvider() {
-		return new CharSTreeNodeInfoProvider();
+		return CharSTreeNodeInfoProvider.INSTANCE;
 	}
 
 	/**

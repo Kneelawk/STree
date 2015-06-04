@@ -31,8 +31,12 @@ import java.io.IOException;
 import com.kneelawk.stree.core.FloatSTreeNode;
 import com.kneelawk.stree.core.STreeNode;
 
-public class FloatSTreeNodeInfoProvider implements
-		STreeInfoProvider {
+public class FloatSTreeNodeInfoProvider implements STreeInfoProvider {
+
+	public static final FloatSTreeNodeInfoProvider INSTANCE = new FloatSTreeNodeInfoProvider();
+
+	protected FloatSTreeNodeInfoProvider() {
+	}
 
 	@Override
 	public void write(STreeNode objectToWrite, DataOutput streamToWriteTo)
@@ -42,8 +46,7 @@ public class FloatSTreeNodeInfoProvider implements
 	}
 
 	@Override
-	public FloatSTreeNode read(DataInput streamToReadFrom)
-			throws IOException {
+	public FloatSTreeNode read(DataInput streamToReadFrom) throws IOException {
 		return new FloatSTreeNode(streamToReadFrom.readFloat());
 	}
 

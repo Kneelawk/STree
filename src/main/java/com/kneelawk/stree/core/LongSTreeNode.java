@@ -36,18 +36,18 @@ public class LongSTreeNode extends STreeNode {
 	 * the LongSTreeNode's data
 	 */
 	public long data = 0;
-	
+
 	/**
 	 * nothing happens here
 	 */
 	public LongSTreeNode() {
-		
+
 	}
-	
+
 	public LongSTreeNode(long l) {
 		data = l;
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */
@@ -69,7 +69,7 @@ public class LongSTreeNode extends STreeNode {
 	 */
 	@Override
 	public STreeInfoProvider getInfoProvider() {
-		return new LongSTreeNodeInfoProvider();
+		return LongSTreeNodeInfoProvider.INSTANCE;
 	}
 
 	/**

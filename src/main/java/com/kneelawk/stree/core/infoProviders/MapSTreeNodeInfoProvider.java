@@ -35,27 +35,35 @@ import com.kneelawk.stree.core.MapSTreeNode;
 import com.kneelawk.stree.core.STreeNode;
 
 public class MapSTreeNodeInfoProvider implements STreeInfoProvider {
-	
-	public void write(STreeNode objectToWrite, DataOutput streamToWriteTo) throws IOException {
+
+	public static final MapSTreeNodeInfoProvider INSTANCE = new MapSTreeNodeInfoProvider();
+
+	protected MapSTreeNodeInfoProvider() {
+	}
+
+	public void write(STreeNode objectToWrite, DataOutput streamToWriteTo)
+			throws IOException {
 		MapSTreeNode node = (MapSTreeNode) objectToWrite;
 		Set<Entry<String, STreeNode>> nodeSet = node.entrySet();
-		for(Entry<String, STreeNode> entry : nodeSet){
+		for (Entry<String, STreeNode> entry : nodeSet) {
 			STreeNode.writeSTreeNode(entry.getValue(), streamToWriteTo);
 			streamToWriteTo.writeUTF(entry.getKey());
 		}
 		STreeNode.writeSTreeNode(new EndSTreeNode(), streamToWriteTo);
 	}
-	
+
 	public MapSTreeNode read(DataInput streamToReadFrom) throws IOException {
 		MapSTreeNode node = new MapSTreeNode();
 		STreeNode innerNode;
-		while((innerNode = STreeNode.readSTreeNode(streamToReadFrom)).getInfoProvider().getSTreeID() != new EndSTreeNode().getInfoProvider().getSTreeID()){
+		while ((innerNode = STreeNode.readSTreeNode(streamToReadFrom))
+				.getInfoProvider().getSTreeID() != new EndSTreeNode()
+				.getInfoProvider().getSTreeID()) {
 			String name = streamToReadFrom.readUTF();
 			node.put(name, innerNode);
 		}
 		return node;
 	}
-	
+
 	public byte getSTreeID() {
 		return 1;
 	}

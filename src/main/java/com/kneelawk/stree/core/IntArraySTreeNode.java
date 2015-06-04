@@ -36,18 +36,18 @@ public class IntArraySTreeNode extends STreeNode {
 	 * the IntArraySTreeNode's data
 	 */
 	public int[] data;
-	
+
 	/**
 	 * nothing happens here
 	 */
-	public IntArraySTreeNode(){
-		
+	public IntArraySTreeNode() {
+
 	}
-	
-	public IntArraySTreeNode(int[] is){
+
+	public IntArraySTreeNode(int[] is) {
 		data = is;
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */
@@ -69,7 +69,7 @@ public class IntArraySTreeNode extends STreeNode {
 	 */
 	@Override
 	public STreeInfoProvider getInfoProvider() {
-		return new IntArraySTreeNodeInfoProvider();
+		return IntArraySTreeNodeInfoProvider.INSTANCE;
 	}
 
 	/**
@@ -79,7 +79,7 @@ public class IntArraySTreeNode extends STreeNode {
 	public String toString(int indent) {
 		String s = "";
 		s += "<IntArraySTreeNode>:[\n";
-		for(int i = 0; i < data.length; i++){
+		for (int i = 0; i < data.length; i++) {
 			s += indent(indent + 1) + i + ":<int>:" + data[i] + "\n";
 		}
 		s += indent(indent) + "]";

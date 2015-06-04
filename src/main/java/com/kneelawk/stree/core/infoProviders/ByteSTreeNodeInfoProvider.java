@@ -31,8 +31,12 @@ import java.io.IOException;
 import com.kneelawk.stree.core.ByteSTreeNode;
 import com.kneelawk.stree.core.STreeNode;
 
-public class ByteSTreeNodeInfoProvider implements
-		STreeInfoProvider {
+public class ByteSTreeNodeInfoProvider implements STreeInfoProvider {
+
+	public static final ByteSTreeNodeInfoProvider INSTANCE = new ByteSTreeNodeInfoProvider();
+
+	protected ByteSTreeNodeInfoProvider() {
+	}
 
 	@Override
 	public void write(STreeNode objectToWrite, DataOutput streamToWriteTo)
@@ -42,8 +46,7 @@ public class ByteSTreeNodeInfoProvider implements
 	}
 
 	@Override
-	public ByteSTreeNode read(DataInput streamToReadFrom)
-			throws IOException {
+	public ByteSTreeNode read(DataInput streamToReadFrom) throws IOException {
 		return new ByteSTreeNode(streamToReadFrom.readByte());
 	}
 

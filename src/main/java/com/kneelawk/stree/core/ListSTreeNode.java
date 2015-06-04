@@ -88,7 +88,7 @@ public class ListSTreeNode extends STreeNode implements Iterable<STreeNode>,
 	 */
 	@Override
 	public STreeInfoProvider getInfoProvider() {
-		return new ListSTreeNodeInfoProvider();
+		return ListSTreeNodeInfoProvider.INSTANCE;
 	}
 
 	/**

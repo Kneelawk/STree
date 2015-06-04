@@ -34,7 +34,7 @@ public class NewCalendarSTreeNode extends STreeNode {
 
 	@Override
 	public STreeInfoProvider getInfoProvider() {
-		return new NewCalendarSTreeNodeInfoProvider();
+		return NewCalendarSTreeNodeInfoProvider.INSTANCE;
 	}
 
 	@Override

@@ -31,15 +31,20 @@ import com.kneelawk.stree.core.EndSTreeNode;
 import com.kneelawk.stree.core.STreeNode;
 
 public class EndSTreeNodeInfoProvider implements STreeInfoProvider {
-	
-	public void write(STreeNode objectToWrite, DataOutput streamToWrightTo) {
-		
+
+	public static final EndSTreeNodeInfoProvider INSTANCE = new EndSTreeNodeInfoProvider();
+
+	protected EndSTreeNodeInfoProvider() {
 	}
-	
+
+	public void write(STreeNode objectToWrite, DataOutput streamToWrightTo) {
+
+	}
+
 	public EndSTreeNode read(DataInput streamToReadFrom) {
 		return new EndSTreeNode();
 	}
-	
+
 	public byte getSTreeID() {
 		return 0;
 	}

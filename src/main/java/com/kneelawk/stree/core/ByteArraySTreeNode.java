@@ -36,18 +36,18 @@ public class ByteArraySTreeNode extends STreeNode {
 	 * the ByteArraySTreeNode's data
 	 */
 	public byte[] data;
-	
+
 	/**
 	 * initializes data
 	 */
-	public ByteArraySTreeNode(){
+	public ByteArraySTreeNode() {
 		data = new byte[0];
 	}
-	
-	public ByteArraySTreeNode(byte[] byteData){
+
+	public ByteArraySTreeNode(byte[] byteData) {
 		data = byteData;
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */
@@ -55,7 +55,7 @@ public class ByteArraySTreeNode extends STreeNode {
 	public byte[] getValue() {
 		return data;
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */
@@ -63,13 +63,13 @@ public class ByteArraySTreeNode extends STreeNode {
 	public void setValue(Object o) {
 		data = (byte[]) o;
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override
 	public STreeInfoProvider getInfoProvider() {
-		return new ByteArraySTreeNodeInfoProvider();
+		return ByteArraySTreeNodeInfoProvider.INSTANCE;
 	}
 
 	/**
@@ -79,7 +79,7 @@ public class ByteArraySTreeNode extends STreeNode {
 	public String toString(int indent) {
 		String s = "";
 		s += "<ByteArraySTreeNode>:[\n";
-		for(int i = 0; i < data.length; i++){
+		for (int i = 0; i < data.length; i++) {
 			s += indent(indent + 1) + i + ":<byte>:" + data[i] + "\n";
 		}
 		s += indent(indent) + "]";

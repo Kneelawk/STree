@@ -42,18 +42,18 @@ public class BooleanSTreeNode extends STreeNode {
 	 * this BooleanSTreeNode's data
 	 */
 	public boolean data = false;
-	
+
 	/**
 	 * nothing happens here
 	 */
 	public BooleanSTreeNode() {
-		
+
 	}
-	
+
 	public BooleanSTreeNode(boolean b) {
 		data = b;
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */
@@ -61,7 +61,7 @@ public class BooleanSTreeNode extends STreeNode {
 	public Boolean getValue() {
 		return data;
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */
@@ -69,15 +69,15 @@ public class BooleanSTreeNode extends STreeNode {
 	public void setValue(Object o) {
 		data = (Boolean) o;
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override
 	public STreeInfoProvider getInfoProvider() {
-		return new BooleanSTreeNodeInfoProvider();
+		return BooleanSTreeNodeInfoProvider.INSTANCE;
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */

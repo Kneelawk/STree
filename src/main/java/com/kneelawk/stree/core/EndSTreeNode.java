@@ -26,8 +26,11 @@ package com.kneelawk.stree.core;
 
 import com.kneelawk.stree.core.infoProviders.EndSTreeNodeInfoProvider;
 import com.kneelawk.stree.core.infoProviders.STreeInfoProvider;
+
 /**
- * EndSTreeNode - usualy put at the end of a {@link MapSTreeNode MapSTreeNode}'s inner nodes
+ * EndSTreeNode - usualy put at the end of a {@link MapSTreeNode MapSTreeNode}'s
+ * inner nodes
+ * 
  * @author Kneelawk
  *
  */
@@ -42,15 +45,15 @@ public class EndSTreeNode extends STreeNode {
 	public Object getValue() {
 		return null;
 	}
-	
+
 	@Override
 	public void setValue(Object o) {
-		
+
 	}
 
 	@Override
 	public STreeInfoProvider getInfoProvider() {
-		return new EndSTreeNodeInfoProvider();
+		return EndSTreeNodeInfoProvider.INSTANCE;
 	}
 
 	@Override

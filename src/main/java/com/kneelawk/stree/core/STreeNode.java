@@ -87,24 +87,24 @@ public abstract class STreeNode implements TreeNode, Serializable {
 
 	private static HashMap<Byte, STreeInfoProvider> createPorviderList() {
 		HashMap<Byte, STreeInfoProvider> infos = new HashMap<Byte, STreeInfoProvider>();
-		addSTreeInfoProvider(infos, new EndSTreeNodeInfoProvider());
-		addSTreeInfoProvider(infos, new MapSTreeNodeInfoProvider());
-		addSTreeInfoProvider(infos, new ListSTreeNodeInfoProvider());
-		addSTreeInfoProvider(infos, new ByteArraySTreeNodeInfoProvider());
-		addSTreeInfoProvider(infos, new ByteSTreeNodeInfoProvider());
-		addSTreeInfoProvider(infos, new DoubleSTreeNodeInfoProvider());
-		addSTreeInfoProvider(infos, new FloatSTreeNodeInfoProvider());
-		addSTreeInfoProvider(infos, new IntArraySTreeNodeInfoProvider());
-		addSTreeInfoProvider(infos, new IntSTreeNodeInfoProvider());
-		addSTreeInfoProvider(infos, new LongSTreeNodeInfoProvider());
-		addSTreeInfoProvider(infos, new ShortSTreeNodeInfoProvider());
-		addSTreeInfoProvider(infos, new StringSTreeNodeInfoProvider());
-		addSTreeInfoProvider(infos, new BooleanSTreeNodeInfoProvider());
-		addSTreeInfoProvider(infos, new CharSTreeNodeInfoProvider());
-		addSTreeInfoProvider(infos, new FileSTreeNodeInfoProvider());
-		addSTreeInfoProvider(infos, new BooleanArraySTreeNodeInfoProvider());
-		addSTreeInfoProvider(infos, new CalendarSTreeNodeInfoProvider());
-		addSTreeInfoProvider(infos, new NewCalendarSTreeNodeInfoProvider());
+		addSTreeInfoProvider(infos, EndSTreeNodeInfoProvider.INSTANCE);
+		addSTreeInfoProvider(infos, MapSTreeNodeInfoProvider.INSTANCE);
+		addSTreeInfoProvider(infos, ListSTreeNodeInfoProvider.INSTANCE);
+		addSTreeInfoProvider(infos, ByteArraySTreeNodeInfoProvider.INSTANCE);
+		addSTreeInfoProvider(infos, ByteSTreeNodeInfoProvider.INSTANCE);
+		addSTreeInfoProvider(infos, DoubleSTreeNodeInfoProvider.INSTANCE);
+		addSTreeInfoProvider(infos, FloatSTreeNodeInfoProvider.INSTANCE);
+		addSTreeInfoProvider(infos, IntArraySTreeNodeInfoProvider.INSTANCE);
+		addSTreeInfoProvider(infos, IntSTreeNodeInfoProvider.INSTANCE);
+		addSTreeInfoProvider(infos, LongSTreeNodeInfoProvider.INSTANCE);
+		addSTreeInfoProvider(infos, ShortSTreeNodeInfoProvider.INSTANCE);
+		addSTreeInfoProvider(infos, StringSTreeNodeInfoProvider.INSTANCE);
+		addSTreeInfoProvider(infos, BooleanSTreeNodeInfoProvider.INSTANCE);
+		addSTreeInfoProvider(infos, CharSTreeNodeInfoProvider.INSTANCE);
+		addSTreeInfoProvider(infos, FileSTreeNodeInfoProvider.INSTANCE);
+		addSTreeInfoProvider(infos, BooleanArraySTreeNodeInfoProvider.INSTANCE);
+		addSTreeInfoProvider(infos, CalendarSTreeNodeInfoProvider.INSTANCE);
+		addSTreeInfoProvider(infos, NewCalendarSTreeNodeInfoProvider.INSTANCE);
 		return infos;
 	}
 
@@ -220,7 +220,7 @@ public abstract class STreeNode implements TreeNode, Serializable {
 	public static void writeSTreeNode(STreeNode node, DataOutput out)
 			throws IOException {
 		out.writeByte(node.getSTreeID());
-		if (node.getSTreeID() == new EndSTreeNode().getSTreeID())
+		if (node.getSTreeID() == EndSTreeNodeInfoProvider.INSTANCE.getSTreeID())
 			return;
 		node.getInfoProvider().write(node, out);
 	}
@@ -235,7 +235,7 @@ public abstract class STreeNode implements TreeNode, Serializable {
 	 */
 	public static STreeNode readSTreeNode(DataInput in) throws IOException {
 		byte type = in.readByte();
-		if (type == new EndSTreeNode().getSTreeID())
+		if (type == EndSTreeNodeInfoProvider.INSTANCE.getSTreeID())
 			return new EndSTreeNode();
 		if (!infoProviders.containsKey(type))
 			throw new IOException("Malformed STree Node (unknown ID): " + type);

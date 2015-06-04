@@ -37,6 +37,11 @@ public class NewCalendarSTreeNodeInfoProvider implements STreeInfoProvider {
 	public static final byte VERSION_START = 0;
 	public static final byte CURRENT_VERSION = VERSION_START;
 
+	public static final NewCalendarSTreeNodeInfoProvider INSTANCE = new NewCalendarSTreeNodeInfoProvider();
+
+	protected NewCalendarSTreeNodeInfoProvider() {
+	}
+
 	@Override
 	public void write(STreeNode obj, DataOutput stream) throws IOException {
 		Calendar cal = ((NewCalendarSTreeNode) obj).getValue();

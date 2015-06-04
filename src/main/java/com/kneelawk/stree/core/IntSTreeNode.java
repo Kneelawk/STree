@@ -36,18 +36,18 @@ public class IntSTreeNode extends STreeNode {
 	 * IntSTreeNode's data
 	 */
 	public int data = 0;
-	
+
 	/**
 	 * nothing happens here
 	 */
 	public IntSTreeNode() {
-		
+
 	}
-	
+
 	public IntSTreeNode(int i) {
 		data = i;
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */
@@ -69,7 +69,7 @@ public class IntSTreeNode extends STreeNode {
 	 */
 	@Override
 	public STreeInfoProvider getInfoProvider() {
-		return new IntSTreeNodeInfoProvider();
+		return IntSTreeNodeInfoProvider.INSTANCE;
 	}
 
 	/**
