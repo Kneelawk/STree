@@ -5,6 +5,13 @@ import java.util.Calendar;
 import com.kneelawk.stree.core.infoProviders.NewCalendarSTreeNodeInfoProvider;
 import com.kneelawk.stree.core.infoProviders.STreeInfoProvider;
 
+/**
+ * @deprecated Support for Calendar nodes is being removed. Please use
+ *             MapSTreeNodes instead.
+ * @author jedidiah
+ *
+ */
+@Deprecated
 public class NewCalendarSTreeNode extends STreeNode {
 
 	/**

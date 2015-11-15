@@ -33,8 +33,8 @@ import com.kneelawk.stree.core.CalendarSTreeNode;
 import com.kneelawk.stree.core.STreeNode;
 
 /**
- * @deprecated Has inconsistencies between written and read calendars. Use
- *             NewCalendarSTreeNodeInfoProvider instead.
+ * @deprecated Support for Calendar nodes is being removed. Please use
+ *             MapSTreeNodes instead.
  * @author Kneelawk
  *
  */

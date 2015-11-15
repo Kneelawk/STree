@@ -32,6 +32,13 @@ import java.util.Calendar;
 import com.kneelawk.stree.core.NewCalendarSTreeNode;
 import com.kneelawk.stree.core.STreeNode;
 
+/**
+ * @deprecated Support for Calendar nodes is being removed. Please use
+ *             MapSTreeNodes instead.
+ * @author jedidiah
+ *
+ */
+@Deprecated
 public class NewCalendarSTreeNodeInfoProvider implements STreeInfoProvider {
 
 	public static final byte VERSION_START = 0;
