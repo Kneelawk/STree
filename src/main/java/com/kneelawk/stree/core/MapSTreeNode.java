@@ -264,22 +264,12 @@ public class MapSTreeNode extends STreeNode implements Map<String, STreeNode>,
 		return (ByteSTreeNode) get(key);
 	}
 
-	@Deprecated
-	public CalendarSTreeNode getCalendar(String key) {
-		return (CalendarSTreeNode) get(key);
-	}
-
 	public CharSTreeNode getChar(String key) {
 		return (CharSTreeNode) get(key);
 	}
 
 	public DoubleSTreeNode getDouble(String key) {
 		return (DoubleSTreeNode) get(key);
-	}
-
-	@Deprecated
-	public FileSTreeNode getFile(String key) {
-		return (FileSTreeNode) get(key);
 	}
 
 	public FloatSTreeNode getFloat(String key) {
@@ -304,10 +294,6 @@ public class MapSTreeNode extends STreeNode implements Map<String, STreeNode>,
 
 	public MapSTreeNode getMap(String key) {
 		return (MapSTreeNode) get(key);
-	}
-
-	public NewCalendarSTreeNode getNewCalendar(String key) {
-		return (NewCalendarSTreeNode) get(key);
 	}
 
 	public ShortSTreeNode getShort(String key) {

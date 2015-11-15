@@ -38,18 +38,15 @@ import com.kneelawk.stree.core.infoProviders.BooleanArraySTreeNodeInfoProvider;
 import com.kneelawk.stree.core.infoProviders.BooleanSTreeNodeInfoProvider;
 import com.kneelawk.stree.core.infoProviders.ByteArraySTreeNodeInfoProvider;
 import com.kneelawk.stree.core.infoProviders.ByteSTreeNodeInfoProvider;
-import com.kneelawk.stree.core.infoProviders.CalendarSTreeNodeInfoProvider;
 import com.kneelawk.stree.core.infoProviders.CharSTreeNodeInfoProvider;
 import com.kneelawk.stree.core.infoProviders.DoubleSTreeNodeInfoProvider;
 import com.kneelawk.stree.core.infoProviders.EndSTreeNodeInfoProvider;
-import com.kneelawk.stree.core.infoProviders.FileSTreeNodeInfoProvider;
 import com.kneelawk.stree.core.infoProviders.FloatSTreeNodeInfoProvider;
 import com.kneelawk.stree.core.infoProviders.IntArraySTreeNodeInfoProvider;
 import com.kneelawk.stree.core.infoProviders.IntSTreeNodeInfoProvider;
 import com.kneelawk.stree.core.infoProviders.ListSTreeNodeInfoProvider;
 import com.kneelawk.stree.core.infoProviders.LongSTreeNodeInfoProvider;
 import com.kneelawk.stree.core.infoProviders.MapSTreeNodeInfoProvider;
-import com.kneelawk.stree.core.infoProviders.NewCalendarSTreeNodeInfoProvider;
 import com.kneelawk.stree.core.infoProviders.STreeInfoProvider;
 import com.kneelawk.stree.core.infoProviders.ShortSTreeNodeInfoProvider;
 import com.kneelawk.stree.core.infoProviders.StringSTreeNodeInfoProvider;
@@ -101,10 +98,7 @@ public abstract class STreeNode implements TreeNode, Serializable {
 		addSTreeInfoProvider(infos, StringSTreeNodeInfoProvider.INSTANCE);
 		addSTreeInfoProvider(infos, BooleanSTreeNodeInfoProvider.INSTANCE);
 		addSTreeInfoProvider(infos, CharSTreeNodeInfoProvider.INSTANCE);
-		addSTreeInfoProvider(infos, FileSTreeNodeInfoProvider.INSTANCE);
 		addSTreeInfoProvider(infos, BooleanArraySTreeNodeInfoProvider.INSTANCE);
-		addSTreeInfoProvider(infos, CalendarSTreeNodeInfoProvider.INSTANCE);
-		addSTreeInfoProvider(infos, NewCalendarSTreeNodeInfoProvider.INSTANCE);
 		return infos;
 	}
 
